@@ -1,0 +1,31 @@
+[package]
+name = "nearai_hedge_fund"
+version = "0.1.0"
+authors = ["NEAR AI Agent Studio <dev@near.org>"]
+edition = "2021"
+description = "AI-powered hedge fund smart contract on NEAR blockchain"
+repository = "https://github.com/jbarnes850/near-ai-agent-studio"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+near-sdk = "4.1.1"
+near-contract-standards = "4.1.1"
+borsh = "0.9.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uint = { version = "0.9.3", default-features = false }
+wee_alloc = { version = "0.4.5", default-features = false }
+
+[profile.release]
+codegen-units = 1
+# Tell `rustc` to optimize for small code size.
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
+
+[workspace]
+members = []

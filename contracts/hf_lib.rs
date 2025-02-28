@@ -663,6 +663,7 @@ impl AiHedgeFund {
     }
 }
 
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -748,7 +749,7 @@ mod tests {
         let position = contract.investors.get(&accounts(1)).unwrap();
         assert_eq!(position.shares, 5_000_000_000_000_000_000_000_000);
         assert_eq!(position.invested_amount, 5_000_000_000_000_000_000_000_000);
-        
+
         // Verify fund totals
         assert_eq!(contract.total_shares, 5_000_000_000_000_000_000_000_000);
         assert_eq!(contract.total_fund_value, 5_000_000_000_000_000_000_000_000);
