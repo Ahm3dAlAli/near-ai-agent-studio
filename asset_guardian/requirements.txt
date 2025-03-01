@@ -1,0 +1,30 @@
+# Core dependencies
+aiohttp>=3.9.1
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pyyaml>=6.0
+click>=8.1.7
+colorama>=0.4.4
+
+# NEAR Protocol
+near-api-py>=0.1.0
+base58>=2.1.0
+PyNaCl>=1.5.0
+
+# LLM Integration
+openai>=1.6.1
+httpx>=0.26.0
+
+# Data Processing
+pandas>=2.0.0
+
+# Testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Logging
+colorlog>=6.8.0
+
+# CLI Interface
+prompt_toolkit>=3.0.43
