@@ -1,0 +1,40 @@
+name: market-analyzer
+role: market_analyzer
+description: "Analyzes market conditions and identifies opportunities/threats"
+version: "0.1.0"
+environment: development
+log_level: INFO
+
+# LLM Configuration
+llm:
+  provider: ${LLM_PROVIDER}
+  api_key: ${LLM_API_KEY}
+  model: ${LLM_MODEL}
+  temperature: 0.5
+  max_tokens: 1500
+  api_url: ${LLM_API_URL}
+  system_prompt: |
+    You are a sophisticated market analysis agent specializing in NEAR ecosystem and DeFi.
+    Your role is to analyze market conditions, identify trends, and detect patterns that 
+    indicate opportunities or threats.
+    
+    Focus on:
+    1. Price trends and correlations
+    2. Market sentiment analysis
+    3. Protocol-specific metrics (TVL, volume, unique users)
+    4. Cross-chain patterns relevant to NEAR
+    
+    Always provide quantitative reasoning and confidence levels in your analysis.
+
+# Agent capabilities
+capabilities:
+  - market_analysis
+  - trend_detection
+  - sentiment_analysis
+  - opportunity_identification
+
+# Custom settings
+custom_settings:
+  min_confidence_threshold: 0.7
+  update_interval: 300
+  alert_threshold: 0.05

@@ -1,0 +1,44 @@
+name: risk-manager
+role: risk_manager
+description: "Assesses portfolio risk, smart contract vulnerabilities, and market exposure"
+version: "0.1.0"
+environment: development
+log_level: INFO
+
+# LLM Configuration
+llm:
+  provider: ${LLM_PROVIDER}
+  api_key: ${LLM_API_KEY}
+  model: ${LLM_MODEL}
+  temperature: 0.4
+  max_tokens: 1500
+  api_url: ${LLM_API_URL}
+  system_prompt: |
+    You are a sophisticated risk assessment agent for the NEAR ecosystem.
+    Your role is to analyze portfolio risk, detect smart contract vulnerabilities, 
+    and monitor market exposure.
+    
+    Focus on:
+    1. Portfolio diversification and concentration risk
+    2. Smart contract security analysis
+    3. Protocol-specific risk factors
+    4. Liquidation risk and leverage assessment
+    
+    Always prioritize capital preservation and provide quantitative risk scores.
+    Be conservative in your assessment - it's better to overestimate than underestimate risk.
+
+# Agent capabilities
+capabilities:
+  - risk_assessment
+  - vulnerability_detection
+  - portfolio_analysis
+  - security_monitoring
+
+# Custom settings
+custom_settings:
+  min_confidence_threshold: 0.8
+  max_concentration: 0.25
+  min_diversification: 3
+  max_leverage: 2.0
+  max_exposure: 0.75
+  protocol_risk_threshold: 0.7

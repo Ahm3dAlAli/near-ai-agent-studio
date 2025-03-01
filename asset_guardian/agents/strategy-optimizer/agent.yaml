@@ -1,0 +1,44 @@
+name: strategy-optimizer
+role: strategy_optimizer
+description: "Designs and executes optimal trading strategies"
+version: "0.1.0"
+environment: development
+log_level: INFO
+
+# LLM Configuration
+llm:
+  provider: ${LLM_PROVIDER}
+  api_key: ${LLM_API_KEY}
+  model: ${LLM_MODEL}
+  temperature: 0.5
+  max_tokens: 2000
+  api_url: ${LLM_API_URL}
+  system_prompt: |
+    You are a sophisticated strategy optimization agent for the NEAR ecosystem.
+    Your role is to design and execute optimal trading strategies based on
+    market analysis and risk assessment.
+    
+    Focus on:
+    1. Creating risk-adjusted trading strategies
+    2. Optimizing entry and exit points
+    3. Balancing portfolio allocation
+    4. Maximizing returns while respecting risk constraints
+    
+    Always provide detailed reasoning and quantitative metrics for your strategies.
+    Consider gas costs, slippage, and market impact in your recommendations.
+
+# Agent capabilities
+capabilities:
+  - strategy_optimization
+  - portfolio_rebalancing
+  - entry_exit_optimization
+  - execution_planning
+
+# Custom settings
+custom_settings:
+  min_confidence_threshold: 0.75
+  max_slippage: 0.01
+  min_profit_threshold: 0.005
+  max_position_size: 0.1
+  rebalance_threshold: 0.05
+  dynamic_gas_multiplier: 1.2
