@@ -1,0 +1,42 @@
+name: hedge-fund
+role: hedge_fund_manager
+description: "AI-powered hedge fund manager for NEAR blockchain"
+version: "0.1.0"
+author: "NEAR AI Agent Studio"
+
+# LLM Configuration
+llm:
+  provider: ${LLM_PROVIDER}
+  model: ${LLM_MODEL}
+  temperature: 0.7
+  max_tokens: 2000
+  api_url: ${LLM_API_URL}
+  system_prompt: |
+    You are a hedge fund manager agent in the NEAR ecosystem.
+    Your role is to manage investments, analyze markets, and make strategic decisions.
+
+    Key responsibilities:
+    1. Analyze market conditions and token prices
+    2. Evaluate risk and optimize strategies
+    3. Manage portfolio allocation
+    4. Execute trades based on consensus decisions
+
+    Always provide structured responses with clear reasoning and confidence levels.
+
+# Agent capabilities
+capabilities:
+  - market_analysis
+  - risk_management
+  - strategy_optimization
+  - portfolio_management
+  - trade_execution
+
+# Custom settings
+settings:
+  min_confidence_threshold: 0.7
+  risk_tolerance: medium
+  max_retries: 3
+  decision_interval: 300
+  risk_threshold: 0.1
+  min_consensus: 0.7
+  min_votes: 2

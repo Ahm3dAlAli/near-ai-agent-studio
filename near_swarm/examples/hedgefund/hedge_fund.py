@@ -69,21 +69,21 @@ class NearAIHedgeFund:
             
             # Create agent configuration
             agent_config = AgentConfig(
-                network=os.getenv("NEAR_NETWORK", "testnet"),
+                network=os.getenv("NEAR_NETWORK"),
                 account_id=os.getenv("NEAR_ACCOUNT_ID"),
                 private_key=os.getenv("NEAR_PRIVATE_KEY"),
                 llm_provider=os.getenv("LLM_PROVIDER", "hyperbolic"),
                 llm_api_key=os.getenv("LLM_API_KEY"),
-                llm_model=os.getenv("LLM_MODEL", "meta-llama/Llama-3.3-70B-Instruct"),
-                api_url=os.getenv("LLM_API_URL", "https://api.hyperbolic.xyz/v1")
+                llm_model=os.getenv("LLM_MODEL"),
+                api_url=os.getenv("LLM_API_URL")
             )
             
             # Initialize NEAR connection
             near_config = NEARConfig(
-                network=os.getenv("NEAR_NETWORK", "testnet"),
+                network=os.getenv("NEAR_NETWORK"),
                 account_id=os.getenv("NEAR_ACCOUNT_ID"),
                 private_key=os.getenv("NEAR_PRIVATE_KEY"),
-                node_url=os.getenv("NEAR_RPC_URL", "https://rpc.testnet.fastnear.com")
+                node_url=os.getenv("NEAR_RPC_URL")
             )
             self.near = await NEARConnection(
                 network=near_config.network,
@@ -273,7 +273,6 @@ class NearAIHedgeFund:
             
             # Get risk assessment from the risk manager agent
             assessment = await self.risk_manager.evaluate(context)
-            
             # Store assessment in memory
             await self.memory.store(
                 category="risk_assessment",

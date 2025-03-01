@@ -1,5 +1,5 @@
 [package]
-name = "nearai_hedge_fund"
+name = "NEAR-AI-AGENT-STUDIO"
 version = "0.1.0"
 authors = ["NEAR AI Agent Studio <dev@near.org>"]
 edition = "2021"
