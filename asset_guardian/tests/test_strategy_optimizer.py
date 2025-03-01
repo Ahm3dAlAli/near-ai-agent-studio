@@ -107,4 +107,3 @@ async def test_market_analyzer_evaluate(mock_config):
         assert result == mock_analysis
         assert mock_llm.query.called
         assert mock_market.get_token_price.called
-
